@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Games & Apps</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6686121033967961"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand" id="brand-en">Pixelforge Games</h1>
+      <h1 class="brand" id="brand-ar" style="display:none">بيكسلفورج جيمز</h1>
+      <p class="tag" id="tag-en">Windows & Android — not supported on Apple / MacBook (yet)</p>
+      <p class="tag" id="tag-ar" style="display:none">ويندوز وأندرويد — غير مدعوم على أجهزة آبل / ماك بوك (حتى الآن)</p>
+      <button onclick="switchLang('en')">English</button>
+      <button onclick="switchLang('ar')">العربية</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p id="intro-en">Welcome! Below are links to my games and apps. Click any item to go to the Play Store or Windows download page.</p>
+      <p id="intro-ar" style="display:none">مرحبًا! أدناه روابط لألعابي وتطبيقاتي. اضغط على أي عنصر للانتقال إلى متجر Play أو صفحة تحميل ويندوز.</p>
+    </section>
+
+    <section class="grid" id="apps">
+      <!-- Repeat this card for each game/app. Replace the hrefs below with your real links. -->
+
+      <article class="card">
+        <h2 class="title" id="game1-en">Game One</h2>
+        <h2 class="title" id="game1-ar" style="display:none">اللعبة الأولى</h2>
+        <p class="desc" id="desc1-en">Short description for Game One. Fun, fast, and free.</p>
+        <p class="desc" id="desc1-ar" style="display:none">وصف قصير للعبة الأولى. ممتعة وسريعة ومجانية.</p>
+        <div class="links">
+          <span id="soon1-en">Coming Soon</span>
+          <span id="soon1-ar" style="display:none">قريبا</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2 class="title" id="game2-en">Game Two</h2>
+        <h2 class="title" id="game2-ar" style="display:none">اللعبة الثانية</h2>
+        <p class="desc" id="desc2-en">Short description for Game Two. Puzzle and strategy.</p>
+        <p class="desc" id="desc2-ar" style="display:none">وصف قصير للعبة الثانية. ألغاز واستراتيجية.</p>
+        <div class="links">
+          <span id="soon2-en">Coming Soon</span>
+          <span id="soon2-ar" style="display:none">قريبا</span>
+        </div>
+      </article>
+
+      <!-- Add more cards as needed. -->
+
+    </section>
+
+    <section class="platform-note">
+      <p id="platform-en"><strong>Supported:</strong> Windows, Android<br /><strong>Not supported (yet):</strong> Apple / MacBook</p>
+      <p id="platform-ar" style="display:none"><strong>مدعوم:</strong> ويندوز، أندرويد<br /><strong>غير مدعوم (حتى الآن):</strong> آبل / ماك بوك</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p id="footer-en">© <span id="year"></span> Pixelforge Games</p>
+      <p id="footer-ar" style="display:none">© <span id="year"></span> بيكسلفورج جيمز</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fill current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function switchLang(lang) {
+      var ids = [
+        ['brand-en','brand-ar'],['tag-en','tag-ar'],['intro-en','intro-ar'],
+        ['game1-en','game1-ar'],['desc1-en','desc1-ar'],['soon1-en','soon1-ar'],
+        ['game2-en','game2-ar'],['desc2-en','desc2-ar'],['soon2-en','soon2-ar'],
+        ['platform-en','platform-ar'],['footer-en','footer-ar']
+      ];
+      ids.forEach(function(pair){
+        document.getElementById(pair[0]).style.display = lang==='en'?'':'none';
+        document.getElementById(pair[1]).style.display = lang==='ar'?'':'none';
+      });
+      document.body.dir = lang==='ar'?'rtl':'ltr';
+    }
+  </script>
+</body>
+</html>
